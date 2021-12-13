@@ -12,3 +12,4 @@ export const mongoOptions = {
   },
   schemas: [Sample],
 };
+
