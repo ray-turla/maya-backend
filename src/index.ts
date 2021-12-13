@@ -12,5 +12,3 @@ configServer(3333)
     // i.e. CORS, body-parser, multer and etc...
   ])
   .bootstrapModule(AppModule);
-
-  console.log('hello')

@@ -28,18 +28,18 @@ export class SampleController {
   }
 
   // your seed route. DB is seeded when GET request to this route is called
-  @Get('/seed')
-  async seedDB():Promise<any>{
-    const { model }= this.services
-    await model.deleteMany({})
-    seedData.names.map((name)=>{
-      const sample = new model({
-        name: name,
-        age: seedData.getRandomAge()
-      })
-      sample.save()
-    })
-  }
+  // @Get('/seed')
+  // async seedDB():Promise<any>{
+  //   const { model }= this.services
+  //   await model.deleteMany({})
+  //   seedData.names.map((name)=>{
+  //     const sample = new model({
+  //       name: name,
+  //       age: seedData.getRandomAge()
+  //     })
+  //     sample.save()
+  //   })
+  // }
 
   @Get("/:id")
   async readSampleByID({ params }: MayaJsContext): Promise<any> {
