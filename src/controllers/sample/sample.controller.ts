@@ -2,7 +2,6 @@ import { Get, Patch, Post, Delete, Put } from "@mayajs/common";
 import { MayaJsContext } from "@mayajs/router";
 import { Controller, Service } from "@mayajs/core";
 import { SampleServices } from "./sample.service";
-import { seedData } from "../../database/seeds";
 import multer from "multer";
 const upload = multer({dest: 'uploads'})
 
@@ -26,21 +25,7 @@ export class SampleController {
     const data = await model.find({})
     return data;
   }
-
-  // your seed route. DB is seeded when GET request to this route is called
-  // @Get('/seed')
-  // async seedDB():Promise<any>{
-  //   const { model }= this.services
-  //   await model.deleteMany({})
-  //   seedData.names.map((name)=>{
-  //     const sample = new model({
-  //       name: name,
-  //       age: seedData.getRandomAge()
-  //     })
-  //     sample.save()
-  //   })
-  // }
-
+  
   @Get("/:id")
   async readSampleByID({ params }: MayaJsContext): Promise<any> {
     // Read Sample by ID from list
