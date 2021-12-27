@@ -22,7 +22,7 @@ export class SampleController {
   async readSample(): Promise<any> {
     // Read all Sample list
     const { model } = this.services
-    const data = await model.find({})
+    const data = await model.find({}).sort({name: 1})
     return data;
   }
   

@@ -1,8 +1,6 @@
-import { SampleController } from "./controllers/sample/sample.controller";
-
 export const routes = [
   {
-    path: "sample",
-    controller: SampleController,
+    path: 'sample',
+    loadChildren: () => import('./modules/sample/sample.module').then(m=>m.SampleModule),
   },
 ];
